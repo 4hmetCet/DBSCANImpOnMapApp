@@ -28,8 +28,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private ArrayList<Cluster> result = new ArrayList<>();
     private ArrayList<Integer> colorList = new ArrayList<Integer>();
     private ArrayList<Point> dataSet;
-    private final int minPts = 2;
-    private final double eps = 100.0;
+    private int minPts = 2;
+    private double eps = 1.0;
     private final double distToPerEPS = 1000;
 
     @Override
@@ -44,11 +44,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         colorList.add(Color.GREEN);
         colorList.add(Color.DKGRAY);
         colorList.add(Color.LTGRAY);
-        colorList.add(Color.WHITE);
         colorList.add(Color.CYAN);
         colorList.add(Color.YELLOW);
         colorList.add(Color.MAGENTA);
         colorList.add(Color.BLACK);
+
+        Bundle b = getIntent().getExtras();
+
+        if(b != null){
+            eps = b.getDouble("eps");
+            minPts = b.getInt("minPts");
+        }
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -133,6 +140,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Circle circle = mMap.addCircle(new CircleOptions()
                 .center(latLng)
                 .radius(distToPerEPS*eps)
+                .fillColor(color)
                 .strokeColor(color));
         return circle;
     }

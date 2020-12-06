@@ -15,7 +15,7 @@
         android:layout_marginEnd="101dp"
         android:ems="10"
         android:hint="Enter Epsilon"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,7 +27,7 @@
         android:layout_marginTop="64dp"
         android:ems="10"
         android:hint="Enter MinPts"
-        android:inputType="textPersonName"
+        android:inputType="number|textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/editTextEps"
         app:layout_constraintStart_toStartOf="@+id/editTextEps"
         app:layout_constraintTop_toBottomOf="@+id/editTextEps" />

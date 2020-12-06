@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -15,6 +16,15 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     public void GoToResultOnMap(View view) {
-        startActivity(new Intent(SettingsActivity.this,MapsActivity.class));
+        EditText editText_eps = (EditText) findViewById(R.id.editTextEps);
+        Double eps = Double.parseDouble(editText_eps.getText().toString());
+        EditText editText_mpts = (EditText) findViewById(R.id.editMinPts);
+        int mpts = Integer.parseInt(editText_mpts.getText().toString());
+        Intent intent = new Intent(SettingsActivity.this,MapsActivity.class);
+        Bundle b = new Bundle();
+        b.putDouble("eps", eps);
+        b.putInt("minPts", mpts);
+        intent.putExtras(b); //Put your id to your next Intent
+        startActivity(intent);
     }
 }
