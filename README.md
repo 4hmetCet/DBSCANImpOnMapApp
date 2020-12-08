@@ -18,7 +18,7 @@ Output: A set of density-based clusters.
 
 Method:
 
-mark all objects as unvisited; 
+        mark all objects as unvisited; 
 
         do
 
