@@ -12,6 +12,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -20,6 +21,7 @@ import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.TimerTask;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -76,8 +78,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         dataSet = DataSet.getDataSet();
         SetDataSetPointsToMap();
         ClusterDataSet();
+        SetPointsAsNoise(noise);
 
     }
+
 
     private void SetDataSetPointsToMap(){
         for (Point point:
@@ -140,13 +144,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Circle circle = mMap.addCircle(new CircleOptions()
                 .center(latLng)
                 .radius(distToPerEPS*eps)
-                .fillColor(color)
                 .strokeColor(color));
         return circle;
     }
 
     private void addPointAsNoise(Point point){
+
         noise.AddPointToCluster(point);
+
     }
 
 
@@ -190,6 +195,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if(!n_p.isClustered()){
                 cluster.AddPointToCluster(n_p);
             }
+        }
+    }
+    private void SetPointsAsNoise(Cluster noises){
+        for (Point point:
+                noises.getPointList())
+        {
+            mMap.addMarker(new MarkerOptions().position(point.getLoc()).icon(BitmapDescriptorFactory
+                    .defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         }
     }
 

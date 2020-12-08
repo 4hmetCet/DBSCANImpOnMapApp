@@ -47,6 +47,35 @@ public class DataSet {
         set.add(new Point(new LatLng(40.8324,29.3028)));
         set.add(new Point(new LatLng(40.8293,29.3237)));
         set.add(new Point(new LatLng(40.8223,29.3543)));
+
+        set.add(new Point(new LatLng(40.7905,29.3823)));
+        set.add(new Point(new LatLng(40.7544,29.3132)));
+        set.add(new Point(new LatLng(40.9001,29.3394)));
+        set.add(new Point(new LatLng(40.8032,29.3902)));
+        set.add(new Point(new LatLng(40.8234,29.3543)));
+        set.add(new Point(new LatLng(40.7656,29.3345)));
+        set.add(new Point(new LatLng(40.7934,29.3345)));
+        set.add(new Point(new LatLng(40.7893,29.3234)));
+        set.add(new Point(new LatLng(40.8902,29.3029)));
+        set.add(new Point(new LatLng(40.8345,29.3923)));
+        set.add(new Point(new LatLng(40.8123,29.3293)));
+        set.add(new Point(new LatLng(40.9834,29.3023)));
+        set.add(new Point(new LatLng(40.8684,29.3064)));
+        set.add(new Point(new LatLng(40.8334,29.3923)));
+        set.add(new Point(new LatLng(40.8263,29.3023)));
+        set.add(new Point(new LatLng(40.8549,29.3392)));
+        set.add(new Point(new LatLng(40.8483,29.3034)));
+        set.add(new Point(new LatLng(40.8583,29.39243)));
+        set.add(new Point(new LatLng(40.3244,29.3923)));
+        set.add(new Point(new LatLng(40.8238,29.3240)));
+        set.add(new Point(new LatLng(40.8324,29.3434)));
+        set.add(new Point(new LatLng(40.8637,29.3345)));
+        set.add(new Point(new LatLng(40.8273,29.3383)));
+        set.add(new Point(new LatLng(40.8383,29.3333)));
+        set.add(new Point(new LatLng(40.8435,29.3774)));
+        set.add(new Point(new LatLng(40.8023,29.3028)));
+        set.add(new Point(new LatLng(40.8234,29.3237)));
+        set.add(new Point(new LatLng(40.8023,29.3023)));
         return set;
     }
 
