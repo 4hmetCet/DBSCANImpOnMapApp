@@ -97,7 +97,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Point p = unvisitedPoints.get(new Random().nextInt(unvisitedPoints.size()));
             ArrayList<Point> n_pointList = getNeighbourPointsByEps(p);
             if(n_pointList.size()>=minPts){
-                Cluster cluster = new Cluster(String.valueOf(p.getLoc().latitude));
+                Cluster cluster = new Cluster("C" + String.valueOf(result.size()+1));
                 int cluster_color = colorList.get(new Random().nextInt(colorList.size()));
                 cluster.AddPointToCluster(p);
                 drawCircle(p.getLoc(),eps,cluster_color);

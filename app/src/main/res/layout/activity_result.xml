@@ -7,12 +7,45 @@
     tools:context=".ResultActivity">
 
     <TextView
-        android:id="@+id/textView_result"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/textView_noiseCountMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Noise size"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_noiseCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_noiseCountMsg"
+        app:layout_constraintTop_toBottomOf="@+id/textView_noiseCountMsg" />
+
+    <TextView
+        android:id="@+id/textView_clusterListMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Cluster List"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_noiseCount" />
+
+    <ListView
+        android:id="@+id/listView_result_clusterList"
+        android:layout_width="385dp"
+        android:layout_height="525dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_clusterListMsg"
+        app:layout_constraintTop_toBottomOf="@+id/textView_clusterListMsg" />
 </androidx.constraintlayout.widget.ConstraintLayout>
